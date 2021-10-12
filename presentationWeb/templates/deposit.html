@@ -1,0 +1,21 @@
+<head>
+    <link rel="stylesheet" href="login.css">
+    <title>CurrencyTradingDeposit</title>
+</head>
+<body>  
+  <div class="login">
+    <form method="post">
+
+    <h1>Depositar</h1>
+    <div>
+      <input type="number" name="monto" placeholder="ARS 0.00">
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Depositar</button>
+    </div>        
+        {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+    </form>
+  </div>
+</body>

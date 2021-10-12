@@ -1,0 +1,18 @@
+<head>
+    <link rel="stylesheet" href="login.css">
+    <title>CurrencyTradingCreateUser</title>
+</head>
+<body>
+<div class="login">
+  <h1>Crear Cuenta de usuario</h1>
+    <form method="post">
+      <input type="text" name="u" placeholder="Username" required="required" />
+        <input type="password" name="p" placeholder="Password" required="required" />
+        <input type="password" name="p2" placeholder="Repita el Password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Crear usuario</button>
+        {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+    </form>
+</div>
+</body>

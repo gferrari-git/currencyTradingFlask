@@ -1,0 +1,44 @@
+<head>
+    <link rel="stylesheet" href="login.css">
+    <title>CurrencyTradingOperate</title>
+</head>
+<body>  
+  <div class="login">
+    <form method="post">
+
+    <h1>Operar</h1>
+    <div class="box">
+      <h2>Cuenta Origen</h2>
+      <select name="cuentaorg">
+        <option selected="true">
+        {%for count in result%}
+        {{count["currency"]}}
+        </option>
+        <option>
+        {%endfor%}
+        </option>
+      </select>
+      <h2>Cuenta Destino</h2>
+      <select name="cuentadst">
+        <option selected="true">
+          {%for count in result%}
+          {{count["currency"]}}
+          </option>
+          <option>
+          {%endfor%}
+          </option>
+      </select>
+      
+    </div>
+    <div>
+      <input type="number" name="monto" placeholder="0.00">
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Operar</button>
+    </div>        
+        {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+    </form>
+  </div>
+</body>

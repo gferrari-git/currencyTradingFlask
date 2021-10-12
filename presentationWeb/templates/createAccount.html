@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="login.css">
+    <title>CurrencyTradingCreateAccount</title>
+</head>
+<body>
+
+<div class="login">
+    <form method="post">
+      <div>
+        <h1>Crear Cuenta</h1>
+      </div>
+      <div class="box">
+       
+      <select name="cuenta">
+        <option selected="true">
+        {% for currency in symbols.keys() %}
+        {{currency}}={{symbols[currency]}}
+        </option>
+        <option>
+        {%endfor%}
+        </option>
+      </select>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Crear cuenta</button>
+    </div>
+        
+        {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+    </form>
+  </div>
+</body>
